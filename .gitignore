@@ -1,0 +1,28 @@
+.project
+.idea/
+.settings/
+/.gradle/
+*.iml
+build
+out
+.DS_Store
+rbea-stream/deployment/environments/*/yarn-conf
+
+# Eclipse
+**/bin/*
+**/.classpath
+**/.project
+**/.settings/
+
+# Swagger
+.swagger-codegen/
+
+gradle.properties
+
+# This is locally there on the deploy server
+rbea-batch/batch.json
+rbea-batch/batch.log*
+rbea-batch/test/**
+rbea-batch/jobs/**
+
+rbea-jars/sharedstate/.gradle/
