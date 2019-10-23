@@ -1,0 +1,36 @@
+repositories {
+    mavenCentral()
+}
+
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'runner.Main'
+        )
+    }
+}
+
+dependencies {
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+    // Use JUnit test framework
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+mainClassName = "runner.Main"
+
+// Java version selection
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+run {
+	standardInput = System.in
+	if (project.hasProperty("args")) {
+		args Eval.me(args)
+	}
+}
+
